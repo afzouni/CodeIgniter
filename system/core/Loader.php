@@ -1402,4 +1402,22 @@ class CI_Loader {
 		$CI =& get_instance();
 		return $CI->$component;
 	}
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Object to Array
+	 *
+	 * Takes an object as input and converts the class variables to array key/vals
+	 *
+	 * @param	object
+	 * @return	array
+	 */
+	protected function _ci_object_to_array($object)
+	{
+		return (is_object($object)) ? get_object_vars($object) : $object;
+	}
+
+	// --------------------------------------------------------------------
 }
